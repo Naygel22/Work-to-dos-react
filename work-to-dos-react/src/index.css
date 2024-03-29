@@ -1,0 +1,100 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+body{
+  background: #222;
+}
+.app{
+    max-width: 800px;
+    background: #04a1bf;
+    color: black;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+}
+.title{
+  font-weight: bold;
+  font-size: 35px;
+  color: white;
+  margin-top: -20px;
+}
+.firstText{
+  color: rgb(255, 217, 0);
+  margin-top: 20px;
+  font-size: 16px;
+  
+}
+.secondText{
+  color: rgb(86, 233, 86);
+  margin-top: 20px;
+  font-size: 16px;
+}
+.thirdText{
+  color: #025f70;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.inputArea{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  justify-content: center;
+}
+.inputBar{
+  padding: 10px;
+  border: 0.5px solid #025f70;
+  border-radius: 5px;
+  margin-left: 0px;
+  width: 100%;
+  height: 35px;
+  font-size: 13px;
+}
+.pencil{
+  background-color: #025f70;
+  display: flex;
+  align-items: center;
+  height: 35px;
+  width: 43px;
+  justify-content: center;
+  border: 0.5px solid #025f70;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.pencil img{
+  height: 70%;
+  color: white;
+}
+.answerItem{
+  margin-top: 13px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #025f70;
+  border-radius: 5px;
+  max-width: 800px;
+  height: 40px;
+  background-color: #4eb9cd;
+}
+.answerText{
+padding: 20px;
+color: white;
+font-size: 15px;
+}
+.deleteButton{
+  cursor: pointer;
+  margin-left: 630px;
+  background: transparent;
+  border: 0;
+  font-weight: bold;
+  font-size: 15px;
+  color: #025f70;
+  padding-right: 40px;
+}
