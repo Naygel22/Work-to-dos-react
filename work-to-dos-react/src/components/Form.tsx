@@ -1,33 +1,28 @@
-import { useRef, useState } from "react"
+import { useState } from "react"
 
 
 export function Form() {
 	const [workToDos, setWorkToDos] = useState<string[]>([])
-	const inputText = useRef<HTMLInputElement>(null)
+	const [newItemValue, setNewItemValue] = useState<string>('')
 
 	function handleSubmit(e: React.FormEvent) {
 		e.preventDefault()
+		setWorkToDos((prev) => [...prev, newItemValue])
+		setNewItemValue('')
 
-		const inputTextRef = inputText.current
-
-		if (inputTextRef) {
-			const inputTextRefValue = inputTextRef.value
-
-			if (inputTextRefValue) {
-				setWorkToDos((prev) => [...prev, inputTextRefValue])
-				inputTextRef.value = ''
-			}
-		}
 	}
 
-  function handleDelete(workToDoToDelete: string) {
-    setWorkToDos(prev => prev.filter(workToDo => workToDo !== workToDoToDelete));
-}
+	function handleDelete(workToDoToDelete: string) {
+		setWorkToDos(prev => prev.filter(workToDo => workToDo !== workToDoToDelete));
+	}
+
+
+	console.log(workToDos)
 
 	return (
 		<form onSubmit={handleSubmit} style={{ width: '800px', margin: 'auto' }}>
 			<div className="inputArea">
-				<input type="text" ref={inputText} className="inputBar" placeholder="New item..."/>
+				<input type="text" value={newItemValue} onChange={e => setNewItemValue(e.target.value)} className="inputBar" placeholder="New item..." />
 				<button type="submit" className="pencil">
 					<img src="src/assets/pencil.png" alt="" />
 				</button>
@@ -36,9 +31,9 @@ export function Form() {
 			<div>
 				{workToDos.map((workToDo, index) => (
 					<div key={index} className='answerItem'>
-            <div className='answerText'>{workToDo}</div>
-            <button className='deleteButton' onClick={() => handleDelete(workToDo)}>X</button>
-            </div>
+						<div className='answerText'>{workToDo}</div>
+						<button type="button" className='deleteButton' onClick={() => handleDelete(workToDo)}>X</button>
+					</div>
 				))}
 			</div>
 		</form>

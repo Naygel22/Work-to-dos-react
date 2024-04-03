@@ -2,7 +2,7 @@
 import { Form } from './components/Form'
 import './index.css'
 
-type textProps = {
+type TextProps = {
 	classText: string
 	text: string
 }
@@ -26,7 +26,7 @@ const texts = [
 	}
 ]
 
-function Text({ classText, text }: textProps) {
+function Text({ classText, text }: TextProps) {
 	return <p className={classText}>{text}</p>
 }
 
@@ -39,9 +39,9 @@ export function App() {
 					<Text key={index} classText={el.classText} text={el.text} />
 				))}
 			</div>
-			<div>
-				<Form />
-			</div>
+
+			<Form />
+
 		</>
 	)
 }
